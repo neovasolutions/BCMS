@@ -1,0 +1,22 @@
+<script>
+	function update_subscription(contact_id){
+		
+		var new_subscription_setting=document.getElementById('subscribe_email_alerts').checked;
+		//alert(new_subscription_setting);
+		$.ajax({
+				url: 'save-email-alert?contact_id=' +contact_id + '&new_subscription_setting='+new_subscription_setting,
+				success: function(data, status, httpobj){
+					if(data=="true"){
+						document.getElementById('email_message').style.display='block';
+					}
+				}
+			});
+	}
+</script>
+
+<div style="margin:30px;">
+	<div id="email_message" style="display:none;"><label style="color:red">Email alert setting updated successfully.</label></div>
+	Subscribe or Unsubscribe for CGES Email Alerts:
+	<input type="checkbox" id="subscribe_email_alerts" name="subscribe_email_alerts" <%if @contact.email_flag=='Yes'%> checked <%end%>/><br>
+	<input type="button" value="save" onclick="update_subscription('<%=@contact.id%>');"/>
+</div>

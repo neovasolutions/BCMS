@@ -1,0 +1,59 @@
+<script src="/javascripts/prototype.js" type="text/javascript"></script>
+<link href="/stylesheets/search.css" type="text/css" rel="stylesheet" />
+<script>
+	var link_image_textbox=''
+	var modified_div=''
+	function selected_page(path){
+		$(link_image_textbox).value=path
+		$(modified_div).style.display='none';
+	}
+	function search_url(obj, updatediv, textboxtoadd){
+		var url="/search";
+		link_image_textbox=textboxtoadd;
+		modified_div=updatediv;
+		var search_text=$(obj.id).value;
+		new Ajax.Updater(updatediv, url, {
+			asynchronous: false,
+			evalScripts: true, 
+			parameters: {
+				search_text:search_text
+			}
+		});
+		$(updatediv).style.display='block';
+	}
+
+</script>
+<%= f.cms_text_field :name %>
+<%= f.cms_text_field :ImageName1 %>
+<%= f.cms_text_field :linkurl1 %>
+
+<div class="fields text_fields">
+	<label>Search</label>
+	<input type="text" id="search1_text" name="search1_text" onkeyup="search_url(this,'imagelist_search1', 'image_list_linkurl1');"/>
+</div>
+<div id="imagelist_search1"></div>
+<%= f.cms_text_field :description1 %>
+<%= f.cms_text_field :ImageName2 %>
+<%= f.cms_text_field :linkurl2 %>
+<div class="fields text_fields">
+	<label>Search</label>
+	<input type="text" id="search2_text" name="search2_text" onkeyup="search_url(this,'imagelist_search2','image_list_linkurl2');"/>
+</div>
+<div id="imagelist_search2"></div>
+<%= f.cms_text_field :description2 %>
+<%= f.cms_text_field :ImageName3 %>
+<%= f.cms_text_field :linkurl3 %>
+<div class="fields text_fields">
+	<label>Search</label>
+	<input type="text" id="search3_text" name="search3_text" onkeyup="search_url(this,'imagelist_search3','image_list_linkurl3');"/>
+</div>
+<div id="imagelist_search3"></div>
+<%= f.cms_text_field :description3 %>
+<%= f.cms_text_field :ImageName4 %>
+<%= f.cms_text_field :linkurl4 %>
+<div class="fields text_fields">
+	<label>Search</label>
+	<input type="text" id="search4_text" name="search4_text" onkeyup="search_url(this,'imagelist_search4','image_list_linkurl4');"/>
+</div>
+<div id="imagelist_search4"></div>
+<%= f.cms_text_field :description4 %>

@@ -1,0 +1,118 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/filemanager/browser/default
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+frmresourcetype.html
+file
+
+
+
+
+2009-10-27T14:37:04.640625Z
+b0f778ab8e00f16021d5b00f71f14132
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+images
+dir
+
+browser.html
+file
+
+
+
+
+2009-10-27T14:37:04.593750Z
+f3fa4fd2a564b7fe522273680bf47087
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+frmfolders.html
+file
+
+
+
+
+2009-10-27T14:37:04.625000Z
+575afde9460dfa704b74e22d7af26093
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+frmcreatefolder.html
+file
+
+
+
+
+2009-10-27T14:37:04.609375Z
+3f224282459805e70ddcc7a8caa08e50
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+browser.css
+file
+
+
+
+
+2009-10-27T14:37:04.593750Z
+f168fcde8bee98240e7a7417b512c7c3
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+frmupload.html
+file
+
+
+
+
+2009-10-27T14:37:04.656250Z
+0b42f9563243f6334661da7cfa82237f
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+js
+dir
+
+frmactualfolder.html
+file
+
+
+
+
+2009-10-27T14:37:04.609375Z
+f849208090cfe2db049a0a11896a7d79
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+frmresourceslist.html
+file
+
+
+
+
+2009-10-27T14:37:04.640625Z
+f40ade6d980687e97bb77b5e2c69e08a
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

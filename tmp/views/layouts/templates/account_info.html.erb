@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script type="text/javascript" src="/js/styleswitcher.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.cycle.js"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/dynamic-font-resize.js" type="text/javascript"></script>
+<link href="/css/main.css" type="text/css" rel="stylesheet" />
+<script>
+	$(document).ready(function () {
+		var show_on_page=document.getElementById('acc_page').value;
+		if (show_on_page != "") {
+			$('#accont_information').load('/show-account-information');
+		}
+	});
+</script>
+<%= yield :html_head %>
+</head>
+
+<body id="your-body">
+<input type="hidden" id="acc_page" value="<%=params[:show]%>"/>
+      
+	 
+        <!-- Header -->
+		<!--if we are showing the information on page then render corresponding divs.-->
+        <%unless params[:show].blank?%>
+			<div class="page">
+			<%=render :partial=>'/layouts/templates/account_browse' %>
+			<div class="header">
+	            <div class="logo">
+	                <a href="#"><img src="/images/logo.gif" alt="CGES &#8211; Centre for Global Energy Studies" /></a>
+	            </div><%=render :partial=>'/layouts/templates/show_popup_link' %>
+	            <%=render :partial=>'/layouts/templates/menu' %>
+	            <div class="clear"></div>
+	        </div>
+		<%else%>
+			<div class="popup">
+		<%end%>	
+		 <!-- Content -->
+		<div class="content" >
+	    	<div class="popup-center">
+	    		<div id="main-content" class="custom-content">
+	    			<div id="accont_information">
+	    				Please wait...
+	    			</div>
+	    		</div><!-- end of main content -->
+				<%if params[:show].blank?%>
+					<div style="margin-left:500px;"><a href="/profile-information">Goto page</a></div>
+				<%end%>	
+	    	</div><!-- end of content center -->			
+	 	</div><!-- end of content -->
+
+</div><!-- end of page class -->
+<!-- Footer -->
+<%unless params[:show].blank?%>
+    <%=render :partial=>'/layouts/templates/footer' %>
+<%end%>		
+    <!-- footer class ends -->
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<div class="login-blue">
+
+    			<div class="left">
+
+					<div class="right">
+
+						<ul>
+
+							<%if logged_in?%>
+
+								<li>|</li>
+
+    							<li class="arrow" id="uarrow"><a href="javascript:;"><img src="/images/icons/arrow-down.gif" alt="open" /></a></li>
+
+    							<li>|</li>
+
+    							<li id="mem"><a href="javascript:;">Membership Center</a></li>
+
+    							<li>|</li>
+
+    							<li><a href="/cms/logout">Sign Out</a></li>
+
+    							<li class="rss"><a href="#"><img src="/images/icons/rss-icon.jpg" alt="rss" /></a></li>
+
+							<%else%>
+
+								<li>|</li>
+
+	    					<li class="arrow" id="arrow"><a href="javascript:;"><img src="/images/icons/arrow-down.gif" alt="open" /></a></li>
+
+	    					<li>|</li>
+
+	    					<li id="login"><a href="javascript:;">Login</a></li>
+
+	    					<li>|</li>
+
+	    					<li id="register"><a href="javascript:;">Register</a></li>
+
+	    					<li class="rss"><a href="#"><img src="/images/icons/rss-icon.jpg" alt="rss" /></a></li>
+
+							<%end%>
+
+    					</ul>
+
+					</div>
+
+			</div>
+
+    		</div>

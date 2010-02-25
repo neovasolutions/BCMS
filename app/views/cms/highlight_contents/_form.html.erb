@@ -1,0 +1,21 @@
+<script src="/javascripts/prototype.js" type="text/javascript"></script>
+<script src="/javascripts/search.js" type="text/javascript"></script>
+<link href="/stylesheets/search.css" type="text/css" rel="stylesheet" />
+<script>
+	function selected_page(path){
+		$('highlight_content_linkurl').value=path
+		$('search').style.display='none';
+	}
+</script>
+
+<%= f.cms_text_field :name %>
+<%= f.cms_date_picker :date %>
+<%= f.cms_file_field :attachment_file, :label => "Image" %>
+<%= f.cms_text_field :title %>
+<%= f.cms_text_field :linkurl %>
+<div class="fields text_fields">
+	<label>Search:</label>
+	<input type="text" id="search_text" name="search_text" onkeyup="search_url();"/>
+</div>
+<div id="search"></div>
+<%= f.cms_text_editor :description %>

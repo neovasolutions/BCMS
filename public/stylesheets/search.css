@@ -1,0 +1,24 @@
+body {
+	
+}
+#search{
+	display:block;
+	margin-left: 140px;
+}
+#imagelist_search1{
+	margin-left: 140px;
+}
+#imagelist_search2{
+	margin-left: 140px;
+}
+#imagelist_search3{
+	margin-left: 140px;
+}
+#imagelist_search4{
+	margin-left: 140px;
+}
+
+
+table tr{
+	height:15px;
+}

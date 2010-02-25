@@ -1,0 +1,68 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/skins/office2003
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+fck_dialog_ie6.js
+file
+
+
+
+
+2009-10-27T14:37:07.046875Z
+ab614b4818f39ce97d626c947fdc8365
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fck_editor.css
+file
+
+
+
+
+2009-10-27T14:37:07.046875Z
+d4e96ed8af42eec875615fe809ebef5d
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+images
+dir
+
+fck_strip.gif
+file
+
+
+
+
+2009-10-27T14:37:07.062500Z
+6474795db7e469a110a38cc8546bb962
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+fck_dialog.css
+file
+
+
+
+
+2009-10-27T14:37:07.031250Z
+f87cdcb1f4dd65360a6b7fec32d5fe40
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

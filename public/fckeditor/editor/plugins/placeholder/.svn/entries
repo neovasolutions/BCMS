@@ -1,0 +1,56 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/plugins/placeholder
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+lang
+dir
+
+placeholder.gif
+file
+
+
+
+
+2009-10-27T14:37:06.875000Z
+090274dbcc2f5a50ea1086d948ca85ab
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+fck_placeholder.html
+file
+
+
+
+
+2009-10-27T14:37:06.828125Z
+de929b6da94c31b917d3b784dfe0c2f8
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fckplugin.js
+file
+
+
+
+
+2009-10-27T14:37:06.828125Z
+1ee7fac56c0805c7b6f07002159be396
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

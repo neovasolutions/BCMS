@@ -1,0 +1,68 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/skins/silver
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+fck_dialog_ie6.js
+file
+
+
+
+
+2009-10-27T14:37:07.171875Z
+ab614b4818f39ce97d626c947fdc8365
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fck_editor.css
+file
+
+
+
+
+2009-10-27T14:37:07.171875Z
+a3ae588878e257dda2c3974cada7726e
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+images
+dir
+
+fck_strip.gif
+file
+
+
+
+
+2009-10-27T14:37:07.187500Z
+ea3df2ac0c2768ced8be18445ec91b49
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+fck_dialog.css
+file
+
+
+
+
+2009-10-27T14:37:07.156250Z
+a426cae1de87ab8e95bf2616661665ea
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

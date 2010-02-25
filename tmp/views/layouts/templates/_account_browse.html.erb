@@ -1,0 +1,554 @@
+<%if logged_in?%>
+
+		<div class="login-area" id="userarea">
+
+   			<div class="cont">
+
+				<div class="left-col">
+
+	   				<h1>Membership Center - <b>Quick Browser</b></h1>
+
+	   			</div>
+
+	   			<div class="r-usr"><span><strong>Welcome</strong> <%=current_user.first_name%>, <a href="/cms/logout">Sign Out</a></span></div>
+
+				<div class="account">
+
+					<div class="account-nav" id="anav">
+
+						<ul>
+
+							<li class="select">
+
+								<a href="javascript:;" rel="home">Home</a>
+
+							</li>
+
+							<li id="account">
+
+								<a href="javascript:;" rel="acc">My Account</a>
+
+								<ul>
+
+									<li id="acc_profile"><a href="#" rel="update_profile">Update my Profile</a></li>
+
+									<!--<li><a href="#">My RSS Feeds</a></li>-->
+
+									<li id="acc_email_alert"><a href="#" rel="account_email_alert">Email Alerts &amp; Settings</a></li>
+
+									<li id="acc_password"><a href="#" rel="account_password">Password Settings</a></li>
+
+									<li id="acc_subscription"><a href="#" rel="account_subcription">Subscription Settings</a></li>
+
+								</ul>
+
+							</li>
+
+							<li id="cab">
+
+								<a href="javascript:;" rel="cabinet">E - Cabinet</a>
+
+								<ul>
+
+									<li><a href="#">My BookShelf</a></li>
+
+								</ul>
+
+							</li>
+
+							<li id="pur_history">
+
+								<a href="javascript:;" rel="history">Purchase History</a>
+
+								<ul>
+
+									<li><a href="#">Order History</a></li>
+
+								</ul>
+
+							</li>
+
+							<li id="saved_art">
+
+								<a href="javascript:;" rel="articles">My Saved Articles</a>
+
+								<ul>
+
+									<li><a href="#">Saved Articles</a></li>
+
+								</ul>
+
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="account-home tab" id="home">
+
+						<table cellpadding="0" cellspacing="0">
+
+							<tr>
+
+								<td>
+
+									<p>My Account</p>
+
+									<ul>
+
+										<li><a href="#" rel="update_profile">* Update My Profile</a></li>
+
+										<!--<li>* My RSS feeds</li>-->
+
+										<li><a href="#" rel="account_email_alert">* Email Alerts &amp; Settings</a></li>
+
+										<li><a href="#" rel="account_password">* Password Settings</a></li>
+
+										<li><a href="#" rel="account_subcription">* Subscription Settings</a></li>
+
+									</ul>
+
+								</td>
+
+								<td>
+
+									<p>E -Cabinet</p>
+
+									<ul>
+
+										<li><a href="javascript:;" rel="cabinet">* Visit your bookshelf</a></li>
+
+									</ul>
+
+								</td>
+
+								<td>
+
+									<p>My Saved Articles</p>
+
+									<ul>
+
+										<li><a href="javascript:;" rel="articles">* Review your saved articles</a></li>
+
+									</ul>
+
+								</td>
+
+								<td>
+
+									<p>Purchase History</p>
+
+									<ul>
+
+										<li><a href="javascript:;" rel="history">* View your order history</a></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+						</table>
+
+					</div>
+					
+					<!-- End Home Tab -->
+
+					<!-- My Account Tab -->
+
+   					<form class="my-account tab" action="#" method="get" id="acc">
+
+   						<div>
+
+   							<p>You are logged in as:</p>
+
+   							<p><%=current_user.first_name%> &nbsp;|&nbsp; If this is not you, please <a href="#">log out</a>.</p>
+
+   							<p><label for="password">To ensure the security of the information in your profile, please enter your password:</label></p>
+
+   							<p><input class="input-text" id="password" type="password" /></p>
+
+   							<input class="input-button" type="submit" value="Continue" />
+
+   							<div class="relax">&nbsp;</div>
+
+   							<a class="forgot-password" href="#">Forgot your password?</a>
+
+   						</div>
+
+   					</form>
+
+   					<!-- End My Account Tab -->
+					<div id="account_subcription" class="my-account tab"></div>
+					<div id="account_email_alert" class="my-account tab"> </div>
+					<div id="account_password" class="my-account tab"></div>
+					<div id="update_profile" class="my-account tab"></div>
+   					<div class="tab" id="history">
+	   				</div>
+
+	   				<div class="tab" id="articles">
+	   				</div>
+
+	   				<!-- E-Cabinet Tab -->
+
+	   				<div class="tab" id="cabinet">
+
+	   				    <a href="#" class="more-items">More Saved Items</a> 
+
+	   				    <div class="e-cabinet-box">
+
+		   				    <ul class="e-cabinet-list">
+
+		   				        <li>
+
+		   				            <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+		   				            <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+		   				            <a href="#" class="download-pdf">Download PDF</a>				        
+
+		   				        </li>
+
+		   				        <li>
+
+		                            <img src="/images/pictures/img-tab-2.jpg" alt="" />
+
+		                            <h4>Upstream costs and the price of oil (pdf)</h4>   
+
+		                            <a href="#" class="download-pdf">Download PDF</a>                       
+
+		                        </li>
+
+		                        <li>
+
+		                            <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+		                            <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+		                            <a href="#" class="download-pdf">Download PDF</a>                       
+
+		                        </li>
+
+		                        <li>
+
+		                            <img src="/images/pictures/img-tab-2.jpg" alt="" />
+
+		                            <h4>Upstream costs and the price of oil (pdf)</h4>   
+
+		                            <a href="#" class="download-pdf">Download PDF</a>                       
+
+		                        </li>
+
+		                        <li>
+
+		                            <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+		                            <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+		                            <a href="#" class="download-pdf">Download PDF</a>                       
+
+		                        </li>
+
+		   				    </ul> 
+
+	   				    </div>
+
+	   				    <div class="e-cabinet-box e-cabinet-box-right">
+
+	                        <ul class="e-cabinet-list">
+
+	                            <li>
+
+	                                <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+	                                <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+	                                <a href="#" class="download-pdf">Download PDF</a>                       
+
+	                            </li>
+
+	                            <li>
+
+	                                <img src="/images/pictures/img-tab-2.jpg" alt="" />
+
+	                                <h4>Upstream costs and the price of oil (pdf)</h4>   
+
+	                                <a href="#" class="download-pdf">Download PDF</a>                       
+
+	                            </li>
+
+	                            <li>
+
+	                                <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+	                                <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+	                                <a href="#" class="download-pdf">Download PDF</a>                       
+
+	                            </li>
+
+	                            <li>
+
+	                                <img src="/images/pictures/img-tab-2.jpg" alt="" />
+
+	                                <h4>Upstream costs and the price of oil (pdf)</h4>   
+
+	                                <a href="#" class="download-pdf">Download PDF</a>                       
+
+	                            </li>
+
+	                            <li>
+
+	                                <img src="/images/pictures/img-tab-1.jpg" alt="" />
+
+	                                <h4>The Oil Price Shock and Oil Demand (pdf)</h4>   
+
+	                                <a href="#" class="download-pdf">Download PDF</a>                       
+
+	                            </li>
+
+	                        </ul> 
+
+	                    </div>
+
+	   				</div>
+
+	   				<!-- End E-Cabinet Tab  -->
+
+				</div>
+
+				<div class="relax"></div>
+
+			</div>
+
+			<div class="login-bottom">
+
+				<ul id="usr">
+
+					<li><span><strong>Welcome,</strong> <%=current_user.first_name%></span></li>
+
+   					<li>|</li>
+
+   					<li class="arrow"><a href="javascript:;"><img src="/images/icons/arrow-up.gif" alt="open" /></a></li>
+
+   					<li>|</li>
+
+   					<li class="close"><a href="javascript:;">Close</a></li>
+
+   					<li>|</li>
+
+   					<li><a href="/cms/logout">Sign Out</a></li>
+
+   					<li class="rss"><a href="#"><img src="/images/icons/rss1.png" alt="rss" /></a></li>
+
+   				</ul>
+
+			</div>
+
+   		</div>
+
+	<%else%>
+
+         <div class="login-area" id="logarea">
+
+   		<div class="cont">
+
+			<div class="left-col">
+
+   				<h1>Login</h1>
+
+				<p>Enter the e-mail address and password you use to log in to cges.com. Not an cges.com member yet?<br />
+
+					<a href="javascript:;" id="regyet" class="bold">Register</a>
+
+				</p>
+
+				<p class="blue"><a href="#">FAQ</a> | <a href="#">Privacy Policy</a> | <a href="#">Member Agreement</a></p>
+
+   			</div>
+
+			<div class="right-col">
+
+				<form method="get" action="">
+
+					<div>
+
+						<div class="email">
+
+							<label for="email">E-mail Address</label><input type="text" id="email" />
+
+						</div>
+
+						<div class="pwd">
+
+							<label for="pwd">Password</label><input type="password" id="pwd" />
+
+						</div>
+
+						<a href="#" class="password">Forgot Your Password?</a>
+
+						<div class="remember">
+
+							<input id="rem" type="checkbox"/>
+
+							<label for="rem">Remember me on this computer</label>
+
+						</div>
+
+						<input type="button" class="log-in marg-left" value="Log-in"/>
+
+						<input type="button" class="cancel" value="Cancel" />
+
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="relax"></div>
+
+			</div>
+
+			<div class="login-bottom">
+
+				<ul id="log">
+
+   					<li>|</li>
+
+   					<li class="arrow"><a href="javascript:;"><img src="/images/icons/arrow-up.gif" alt="open" /></a></li>
+
+   					<li>|</li>
+
+   					<li class="close"><a href="javascript:;">Close</a></li>
+
+   					<li>|</li>
+
+   					<li class="reg"><a href="javascript:;">Register</a></li>
+
+   					<li class="rss"><a href="#"><img src="/images/icons/rss1.png" alt="rss" /></a></li>
+
+   				</ul>
+
+			</div>
+
+   		</div>
+
+   		<div class="login-area" id="regarea">
+
+   			<div class="cont">
+
+			<div class="left-col">
+
+   				<h1>Register</h1>
+
+				<p><strong>Benefits of free membership</strong></p>
+
+				<ul>
+
+					<li>* Read hundreds of free articles</li>
+
+					<li>* Receive e-mail newsletters and alerts</li>
+
+					<li>* Preview exclusive interviews with  some of our top analysts</li>
+
+				</ul>
+
+				<p class="blue"><strong>We will not share your email.</strong></p>
+
+				<p class="blue"><a href="#">FAQ</a> | <a href="#">Privacy Policy</a> | <a href="#">Member Agreement</a></p>
+
+   			</div>
+
+			<div class="right-col">
+
+				<form method="get" action="">
+
+					<div>
+
+						<div class="email">
+
+							<label for="fname">First Name<span>*</span></label><input type="text" id="fname" />
+
+						</div>
+
+						<div class="email">
+
+							<label for="lname">Last Name<span>*</span></label><input type="text" id="lname" />
+
+						</div>
+
+						<div class="email">
+
+							<label for="company">Company<span>*</span></label><input type="text" id="company" />
+
+						</div>
+
+						<div class="email">
+
+							<label for="position">Position<span>*</span></label><select id="position"><option>-- Select Position --</option></select>
+
+						</div>
+
+						<div class="email">
+
+							<label for="country">Country<span>*</span></label><select id="country"><option>-- Select Country --</option></select>
+
+						</div>
+
+						<div class="email">
+
+							<label for="email1">Email<span>*</span></label><input type="text" id="email1" />
+
+						</div>
+
+						<div class="email">
+
+							<label for="pwd1">Password<span>*</span></label><input type="password" id="pwd1" />
+
+						</div>
+
+						<div class="email">
+
+							<label for="pwd2">Confirm Password<span>*</span></label><input type="password" id="pwd2" />
+
+						</div>
+
+						<input type="button" class="log-in marg-left" value="Cancel"/>
+
+						<input type="button" class="cancel" value="Submit" />
+
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="relax"></div>
+
+			</div>
+
+			<div class="login-bottom">
+
+				<ul id="reg">
+
+   					<li>|</li>
+
+   					<li class="arrow"><a href="javascript:;"><img src="/images/icons/arrow-up.gif" alt="open" /></a></li>
+
+   					<li>|</li>
+
+   					<li class="close"><a href="javascript:;">Close</a></li>
+
+   					<li>|</li>
+
+   					<li class="log"><a href="javascript:;">Login</a></li>
+
+   					<li class="rss"><a href="#"><img src="/images/icons/rss1.png" alt="rss" /></a></li>
+
+   				</ul>
+
+			</div>
+
+   		</div>
+
+   	<%end%>	

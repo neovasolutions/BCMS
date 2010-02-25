@@ -1,0 +1,88 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/plugins/placeholder/lang
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+es.js
+file
+
+
+
+
+2009-10-27T14:37:06.843750Z
+4db60f46ef148a42a78edc18ff9bddca
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fr.js
+file
+
+
+
+
+2009-10-27T14:37:06.859375Z
+7341182eec1e50dea404628e064d5e74
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+de.js
+file
+
+
+
+
+2009-10-27T14:37:06.843750Z
+ae7555e930c11d52d58feacc6f56684a
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+pl.js
+file
+
+
+
+
+2009-10-27T14:37:06.875000Z
+9b9f6db191268ed3975aec00c443b86d
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+it.js
+file
+
+
+
+
+2009-10-27T14:37:06.859375Z
+c839c692fcc3c0eaaa664c9e12807b06
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+en.js
+file
+
+
+
+
+2009-10-27T14:37:06.843750Z
+253f49a2a4289d3223a246a5f5eb3ab6
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

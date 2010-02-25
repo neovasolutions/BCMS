@@ -1,0 +1,55 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/images/cms/datepicker
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+Thumbs.db
+file
+
+
+
+
+2009-11-13T11:45:47.093000Z
+4cb49ce1e9a859868d7ea7af79efa890
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+close.gif
+file
+
+
+
+
+2009-10-27T14:37:07.828125Z
+cb65bff0a6f552330759c5d222be0e2e
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+clear.gif
+file
+
+
+
+
+2009-10-27T14:37:07.812500Z
+867295adbc6aafc0d3edc46978da5d93
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+

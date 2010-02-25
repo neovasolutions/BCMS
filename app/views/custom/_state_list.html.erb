@@ -1,0 +1,12 @@
+<%unless @state.blank?%>
+	<select name="<%=@state_id%>" id="<%=@state_id%>">
+			 <option value="select state" selected>-- Select state --</option>
+		<%@state.each do |state|%>	
+			<option value="<%=state.id%>" >
+					<%=state.name%>
+			</option>
+		<%end%>	
+     </select>
+	 <%else%>
+	 	<input type="text" id="<%=@state_id%>_name"/>
+ <%end%>

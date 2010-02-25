@@ -1,0 +1,55 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/dialog/common/images
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+locked.gif
+file
+
+
+
+
+2009-10-27T14:37:03.843750Z
+6e654773bc5b98e521f8524e1832d93a
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+reset.gif
+file
+
+
+
+
+2009-10-27T14:37:03.843750Z
+5b0d14a0297015450b4da9d35e249dce
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+unlocked.gif
+file
+
+
+
+
+2009-10-27T14:37:03.843750Z
+00e7c8f052295e559d37d1b1cc9d34e4
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+

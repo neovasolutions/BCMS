@@ -1,0 +1,74 @@
+<link href="/css/custom.css" type="text/css" rel="stylesheet" />
+<script>
+	var contact_functions_arr= new Array();
+	function save_interest(){
+		var select_functions=new Array();
+		for(var i=0; i <contact_functions_arr.length;i++){
+			if(document.getElementById('contact_function_'+contact_functions_arr[i]).checked){
+				select_functions.push(contact_functions_arr[i]);
+			}
+		}
+		var new_interests=select_functions.join(',');
+		$.ajax({
+				url: 'save-account-subscription?new_interest=' +new_interests,
+				complete: function(data){
+					document.getElementById('subscription_message').style.display='block';
+				}
+			});
+	}
+</script>
+<div class="acc-sub">
+
+<div id="subscription_message" style="display:none;"><label style="color:red">Account subscription saved successfully.</label></div>
+	<div class="accsub_left">
+		<table width="90%">
+			<tr>
+				<th>Name</th>
+				<th>Interest</th>
+			</tr>
+			
+		
+		<%@contact_functions_left.each do |contact_function_left|%>
+			<tr>
+				<td><%=contact_function_left.name%></td>
+				<td>
+					<input type="checkbox" id="contact_function_<%=contact_function_left.id%>" name="contact_function_<%=contact_function_left.id%>"
+					<%if !@current_interest.blank? and @current_interest.include?(contact_function_left.id)%>
+						checked
+					<%end%>
+					/>
+				</td>
+				<script>
+					contact_functions_arr.push('<%=contact_function_left.id%>')
+				</script>
+			</tr>
+		<%end%>
+		</table>
+	</div>
+	<div class="accsub_right">
+		<table width="90%">
+			<tr>
+				<th>Name</th>
+				<th>Interest</th>
+			</tr>
+			
+		
+		<%@contact_functions_right.each do |contact_function_right|%>
+			<tr>
+				<td><%=contact_function_right.name%></td>
+				<td>
+					<input type="checkbox" id="contact_function_<%=contact_function_right.id%>" name="contact_function_<%=contact_function_right.id%>"
+					<%if !@current_interest.blank? and @current_interest.include?(contact_function_right.id)%>
+						checked
+					<%end%>
+					/>
+				</td>
+				<script>
+					contact_functions_arr.push('<%=contact_function_right.id%>')
+				</script>
+			</tr>
+		<%end%>
+		</table>
+	</div><div style="clear:both;"></div>
+	<div><input type="button" value="save" onclick="save_interest();"/></div>
+</div>

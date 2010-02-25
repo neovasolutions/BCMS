@@ -1,0 +1,42 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/images/cms/nav
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+Thumbs.db
+file
+
+
+
+
+2009-11-13T11:45:48.250000Z
+954b5f6afde563b44ee0feed1104e65e
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+on_bg.gif
+file
+
+
+
+
+2009-10-27T14:37:08.296875Z
+81b4ae0a5938c89f34c11a53d61bf069
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+

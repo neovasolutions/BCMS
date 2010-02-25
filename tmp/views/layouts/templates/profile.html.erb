@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Update profile information</title>
+		 <%= yield :html_head %>
+		 <script type="text/javascript" src="/js/styleswitcher.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/jquery.cycle.js"></script>
+		<script src="/js/main.js" type="text/javascript"></script>
+		<script src="/js/dynamic-font-resize.js" type="text/javascript"></script>
+		 <link href="/css/main.css" type="text/css" rel="stylesheet" />
+		 <link href="/css/custom.css" type="text/css" rel="stylesheet" />
+		 <script>
+		 	$(document).ready(function () {
+				$('#user_information').load('/show-account-information');
+			});
+		 </script>
+	</head>
+	<body>
+		<div class="page">
+			<%=render :partial=>'/layouts/templates/account_browse'%>
+	    	<!-- Header -->
+	    	<div class="header">
+	    		<div class="logo"><a href="#"><img src="/images/logo.gif" alt="CGES &#8211; Centre for Global Energy Studies" /></a></div>
+				<%=render :partial=>'/layouts/templates/show_popup_link'%>
+			   <%=render :partial=>'/layouts/templates/menu'%>
+	        </div><div style="clear:both;"></div>
+			<div class="content">
+				<div class="profile_left">
+					<ul>
+						<li><a href="#" onclick="$('#user_information').load('/show-account-information');">Update profile</a></li>
+						<li><a href="#" onclick="$('#user_information').load('/account-email-alert');">Email Alert &amp; settings</a></li>
+						<li><a href="#" onclick="$('#user_information').load('/account-password-setting');">Password settings</a></li>
+						<li><a href="#" onclick="$('#user_information').load('/acc-subscription');">Subscription settings</a></li>
+					</ul>
+						
+					
+				</div>
+				<div id="user_information"class="profile_right">
+					
+				</div>
+			</div>	
+		</div>
+		<!-- Footer -->
+    		<%=render :partial=>'/layouts/templates/footer' %>
+    <!-- footer class ends -->
+	</body>
+</html>

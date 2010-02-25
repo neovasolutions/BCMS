@@ -1,0 +1,22 @@
+<%if params[:show].blank?%>
+	<a class="more-items" href="/all-saved-articles?show=all">More Saved Items</a>
+<%end%>
+
+<div class="saved-articles">
+<div class="column-left">
+	<h4>Saved Articles</h4>     
+	<ul>
+	<%@saved_article_left.each do |saved_article_left|%>
+		<li><%=saved_article_left.created_at.strftime("%m-%d-%y")%> | <a href="<%=saved_article_left.link%>"><%=saved_article_left.name%></a></li>
+	<%end%>
+	</ul>
+</div>
+<div class="column-right">
+	<ul>
+   <%@saved_article_right.each do |saved_article_right|%>
+		<li><%=saved_article_right.created_at.strftime("%m-%d-%y")%> | <a href="<%=saved_article_right.link%>"><%=saved_article_right.name%></a></li>
+	<%end%>
+	</ul>
+
+</div><div class="clear"></div>
+</div>

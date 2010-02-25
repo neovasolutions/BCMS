@@ -1,0 +1,51 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/images/cms/icons
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+actions
+dir
+
+user.png
+file
+
+
+
+
+2009-10-27T14:37:08.156250Z
+5ee221cf5d29787f9ddf36d3f4b3425f
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+file_types
+dir
+
+status
+dir
+
+Thumbs.db
+file
+
+
+
+
+2009-11-13T11:45:47.468000Z
+bd2dddd69be4e33d06af2803e496200a
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+

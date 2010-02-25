@@ -1,0 +1,45 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/dialog/fck_about
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+logo_fredck.gif
+file
+
+
+
+
+2009-10-27T14:37:03.859375Z
+23e6cd9ae92d48a472c1e5c6f03218aa
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+
+sponsors
+dir
+
+logo_fckeditor.gif
+file
+
+
+
+
+2009-10-27T14:37:03.859375Z
+f36dd545b6973ec5dcaca671e69305fd
+2010-02-05T08:03:10.418389Z
+1
+tushar
+has-props
+

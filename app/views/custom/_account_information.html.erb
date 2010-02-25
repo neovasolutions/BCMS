@@ -1,0 +1,267 @@
+<link href="/css/custom.css" type="text/css" rel="stylesheet" />
+<script>
+	function save_account_information(){
+		var bstate='';
+		var sstate='';
+		var bstate_name='';
+		var sstate_name='';
+		var email=document.getElementById('email').value;
+		var company=document.getElementById('company').value;
+		var job=document.getElementById('job').value;
+		var bfname=document.getElementById('bf_name').value;
+		var blname=document.getElementById('bl_name').value;
+		var baddress_1=document.getElementById('baddress_1').value;
+		var baddress_2=document.getElementById('baddress_2').value;
+		var bcity=document.getElementById('bcity').value;
+		var bphone=document.getElementById('bphone').value;
+		var bzip=document.getElementById('bzip').value;
+		var bcountry=document.getElementById('bcountry').value;
+		var sfname=document.getElementById('sf_name').value;
+		var slname=document.getElementById('sl_name').value;
+		var saddress_1=document.getElementById('saddress_1').value;
+		var saddress_2=document.getElementById('saddress_2').value;
+		var scity=document.getElementById('scity').value;
+		var sphone=document.getElementById('sphone').value;
+		var szip=document.getElementById('szip').value;
+		var scountry=document.getElementById('scountry').value;
+		if (document.getElementById('bstate'))
+			bstate=document.getElementById('bstate').value;
+		if (document.getElementById('sstate'))
+			sstate=document.getElementById('sstate').value;
+		//alert(bstate);
+		if(document.getElementById('bstate_name'))
+			bstate_name=document.getElementById('bstate_name').value;
+		if(document.getElementById('sstate_name'))
+			sstate_name=document.getElementById('sstate_name').value;
+		//alert(bstate);
+		var request_url='/save-account-information?email='+ email +'&company='+company+ '&job='+job+'&bstate='+bstate+ '&sstate='+sstate+'&bstate_name='+bstate_name + '&sstate_name='+sstate_name;
+		request_url+='&bfname='+bfname+"&blname="+ blname+ '&bad1='+ baddress_1+ '&bad2='+baddress_2+'&bcity='+bcity+"&bphone="+bphone+'&bzip='+bzip+'&bcountry='+bcountry;
+		request_url+='&sfname='+sfname+"&slname="+ slname+ '&sad1='+ saddress_1+ '&sad2='+saddress_2+'&scity='+scity+"&sphone="+sphone+'&szip='+szip+'&scountry='+scountry;
+		//alert(request_url);
+		if(validate(email)){
+			$.ajax({
+				url: request_url,
+				complete: function(data){
+					document.getElementById('account_message').style.display='block';
+				}
+			});
+		}
+		
+	}
+	//This function validates the email address
+	function validate(email) {
+   			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	  		 if(reg.test(email) == false) {
+    	 		 alert('Email Address is not valid');
+      			return false;
+   		}else{
+			return true;
+		}
+	}
+	//This function to populate the states.
+	function populate_states(updateDiv, which_address_state){
+		if (which_address_state == 'bs') {
+			var country_id = document.getElementById('bcountry').value;
+		}
+		else {
+			var country_id = document.getElementById('scountry').value;
+		}
+		//alert("country_id" +country_id);
+		$.ajax({
+				url: 'show-state-list?country_id='+ country_id +'&address_type=' +which_address_state,
+				success: function(data, status, httpobj){
+					document.getElementById(updateDiv).innerHTML=data;
+				}
+			});
+	}
+</script>
+<div class="main-acc-info">
+	<div id="account_message" class="message">Profile updated successfully.</div>
+	<div class="topdiv">
+		<table>
+			<tr>
+				<td colspan="2"><b>Contact details:</b></td>
+			</tr>
+			<tr>
+				<td>Company Name:</td>
+				<td><input type="text" id="company" <%if !@contact.blank? and !@contact.company.blank?%> value= "<%=@contact.company%>"<%end%>/>
+				</td>
+				<td>Job Title:</td>
+				<td><input type="text" id="job" <%if !@contact.blank? and !@contact.job_title.blank?%> value= "<%=@contact.job_title%>"<%end%>/>
+				</td>
+				<td>Email Id:</td>
+				<td><input type="text" id="email" <%if !@contact_email.blank? and !@contact_email.email.blank?%> value= "<%=@contact_email.email%>"<%end%>/>
+				</td>
+			</tr>
+		</table>
+	</div><div style="clear:both;"></div>
+	<div class="bottomdiv">
+		<div class="acc-info-left">
+			<table>
+				<tr>
+					<td colspan="2"><b>Billing address:</b></td>
+				</tr>
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" id="bf_name" <%if !@billing_address.blank? and !@billing_address.firstname.blank?%> value="<%=@billing_address.firstname%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" id="bl_name" <%if !@billing_address.blank? and !@billing_address.lastname.blank?%> value="<%=@billing_address.lastname%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Street Address 1:</td>
+					<td><input type="text" id="baddress_1" <%if !@billing_address.blank? and !@billing_address.address1.blank?%> value="<%=@billing_address.address1%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Street Address 2:</td>
+					<td><input type="text" id="baddress_2" <%if !@billing_address.blank? and !@billing_address.address2.blank?%> value="<%=@billing_address.address2%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" id="bcity" <%if !@billing_address.blank? and !@billing_address.city.blank?%> value="<%=@billing_address.city%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input type="text" id="bphone" <%if !@billing_address.blank? and !@billing_address.phone.blank?%> value="<%=@billing_address.phone%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Zipcode:</td>
+					<td><input type="text" id="bzip" <%if !@billing_address.blank? and !@billing_address.zipcode.blank?%> value="<%=@billing_address.zipcode%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td>
+						<select name="bcountry" id="bcountry" onchange="populate_states('billing_address_state','bs');">
+       						 <option value="0" selected>-- Select country --</option>
+        					<%@country.each do |country|%>	
+								<option value="<%=country.id%>" 
+										<%if country.id==@billing_address.country_id.to_i%>
+									 		selected="selected" 
+										 <%end%> >
+									 	<%=country.name%>
+								</option>
+							<%end%>	
+					     </select>
+					</td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td>
+						<div id="billing_address_state">
+							<%if !@billing_address_state.blank?%>
+								<select name="bstate" id="bstate">
+									<option value="0" selected>-- Select state --</option>
+									<%@billing_address_state.each do |billing_address_state|%>
+										<option value="<%=billing_address_state.id%>"
+										<%if billing_address_state.id==@billing_address.state_id%>
+									 		selected="selected" 
+										 <%end%> >
+											<%=billing_address_state.name%>
+										</option>
+									<%end%>
+								</select>
+							<%else%>
+								<input type="text" id="bstate_name" <%if !@billing_address.state_name.blank?%>
+																	value="<%=@billing_address.state_name%>"
+																<%end%>
+													/>
+							<%end%>
+						</div>	
+					</td>
+					
+				</tr>
+				
+			</table>
+		</div>
+		<div class="acc-info-right">
+			<table>
+				<tr>
+					<td colspan="2"><b>Shipping address:</b></td>
+				</tr>
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" id="sf_name" <%if !@ship_address.blank? and !@ship_address.firstname.blank?%> value="<%=@ship_address.firstname%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" id="sl_name" <%if !@ship_address.blank? and !@ship_address.lastname.blank?%> value="<%=@ship_address.lastname%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Street Address 1:</td>
+					<td><input type="text" id="saddress_1" <%if !@ship_address.blank? and !@ship_address.address1.blank?%> value="<%=@ship_address.address1%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Street Address 2:</td>
+					<td><input type="text" id="saddress_2" <%if !@ship_address.blank? and !@ship_address.address2.blank?%> value="<%=@ship_address.address2%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" id="scity" <%if !@ship_address.blank? and !@ship_address.city.blank?%> value="<%=@ship_address.city%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input type="text" id="sphone" <%if !@ship_address.blank? and !@ship_address.phone.blank?%> value="<%=@ship_address.phone%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Zipcode:</td>
+					<td><input type="text" id="szip" <%if !@ship_address.blank? and !@ship_address.zipcode.blank?%> value="<%=@ship_address.zipcode%>" <%end%>/>
+					</td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td>
+						<select name="scountry" id="scountry" onchange="populate_states('shipping_address_state', 'ss');">
+       						 <option value="0" selected>-- Select country --</option>
+        					<%@country.each do |country|%>	
+								<option value="<%=country.id%>"
+									<%if country.id==@ship_address.country_id.to_i%>
+										selected="selected" 
+									<%end%> >
+								<%=country.name%></option>
+							<%end%>	
+					     </select>
+					</td>
+				</tr>
+				<tr>
+					<td>State:</td>
+						<td>
+							<div id="shipping_address_state">
+								<%if !@ship_address_state.blank?%>
+									<select name="sstate" id="sstate">
+										<option value="0" selected>-- Select state --</option>
+										<%@ship_address_state.each do |shipping_address_state|%>
+											<option value="<%=shipping_address_state.id%>"
+											<%if shipping_address_state.id==@ship_address.state_id%>
+									 			selected="selected" 
+										 	<%end%> >
+												<%=shipping_address_state.name%>
+											</option>
+										<%end%>
+									</select>
+								<%else%>
+									<input type="text" id="sstate_name" <%if !@ship_address.state_name.blank?%>
+														value="<%=@ship_address.state_name%>"
+												<%end%>/>
+								<%end%>
+							</div>	
+						</td>
+				</tr>
+			</table>
+		</div>
+	</div><div style="clear:both;"></div>
+	<div class="acc-button"><input type="button" value="save" onclick="save_account_information();"/></div>
+</div>

@@ -1,0 +1,79 @@
+body {
+	
+}
+.custom-content{
+	background-color:#FFFFFF;
+}
+.main-content .custom-content .saved-articles-box{
+	
+}
+.popup{
+	width: 745px; 
+	height: auto;
+}
+.popup-center{
+	width: 100%; 
+	height: auto;
+}
+.pass-popup{
+	width: 70%; 
+	height: auto;
+}
+
+.message{
+	display:none;
+	color:#FF0000;
+}
+.acc-pass{
+	text-align:center;
+	width:290px;;
+	margin:30px auto;
+	border: 1px solid;
+}
+.main-acc-info{
+	width: 100%;
+}
+.main-acc-info .bottomdiv{
+	width: 100%;
+}
+.main-acc-info .bottomdiv .acc-info-left{
+		float:left;
+		width: 45%;
+		border-right: 1px solid;
+}
+
+.main-acc-info .bottomdiv .acc-info-right{
+		float:left;
+		width: 45%;
+		margin-left:2%;
+}
+.acc-button{
+	margin-top:10px;
+	margin-left:300px;
+}
+.acc-sub{
+	margin-top:10px;
+	text-align:center;
+	width:700px;
+	margin-left:50px;
+}
+.accsub_left{
+	width:40%;
+	float:left;
+	border-right: 1px solid;
+}
+.accsub_right{
+	float:left;
+	width:40%;
+}
+.profile_left{
+	width:15%; 
+	float:left;
+	/*border: 1px solid green;*/
+}
+.profile_right{
+	margin-right:5%;
+	width:75%;
+	float:left;
+	border: 1px solid;
+}

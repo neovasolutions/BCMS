@@ -1,0 +1,52 @@
+8
+
+dir
+1
+svn://192.168.1.199/home/repos/browsercms/public/fckeditor/editor/dtd
+svn://192.168.1.199/home/repos/browsercms
+
+
+
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+
+svn:special svn:externals svn:needs-lock
+
+fck_dtd_test.html
+file
+
+
+
+
+2009-10-27T14:37:04.468750Z
+93fa2b16695ae0f56639a051b9616f0e
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fck_xhtml10transitional.js
+file
+
+
+
+
+2009-10-27T14:37:04.484375Z
+2eaa9662e59360ed579aa2e422c7aa39
+2010-02-05T08:03:10.418389Z
+1
+tushar
+
+fck_xhtml10strict.js
+file
+
+
+
+
+2009-10-27T14:37:04.468750Z
+40574d55231994a9ecb9c56d45938d94
+2010-02-05T08:03:10.418389Z
+1
+tushar
+

@@ -1,0 +1,11 @@
+<%unless @pages.blank?%>
+	<table class="search_result">
+	<%@pages.each do |page|%>
+		<tr>
+			<td>
+				<a href="#" onclick="selected_page('<%=page.path%>');"><%=page.name%></a>
+			</td>
+		</tr>
+	<%end%>
+	</table>
+<%end%>

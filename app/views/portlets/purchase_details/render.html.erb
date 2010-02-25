@@ -1,0 +1,23 @@
+<table class="purchase-history" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+	<th class="order-n" valign="middle" align="left">Order No.</th>
+	<th class="items" valign="middle" align="left">Items</th>
+	<th class="total" valign="middle" align="left">Total</th>
+	<th class="date" valign="middle" align="left">Date</th>
+</tr>
+</thead>
+<tbody>
+<%@order_detail.each do |order| %>
+<tr>
+	<td class="order-n" valign="middle" align="left"><%=order.order_id%></td>
+	<td class="items" valign="middle" align="left"><%=order.product_name%></td>
+	<td class="total" valign="middle" align="left">&pound;<%=order.order_total%></td>
+	<td class="date" valign="middle" align="left"><%=order.created_at.strftime('%b %d, %Y %H:%M')%></td>
+</tr>
+<%end%>
+<%if params[:show].blank?%>
+   <tr><td><a class="more-items" href="/all-purchase-details?show=all">More Saved Items</a></td></tr>
+<%end%>
+</tbody>
+</table>
