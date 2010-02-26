@@ -20,7 +20,11 @@
 	    	<div class="popup-center">
 	    		<div id="main-content" class="custom-content">
 	    			<div id="account_subscription" class="saved-articles-box">
-	    				
+	    				<%if logged_in?%>
+							Please wait...
+	    				<%else%>
+							 To see this page, you should be log in.
+						<%end%>
 	    			</div>
 	    		</div><!-- end of main content -->
 	    	</div><!-- end of content center -->			

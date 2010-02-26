@@ -13,14 +13,6 @@
 <script src="/js/main.js" type="text/javascript"></script>
 <script src="/js/dynamic-font-resize.js" type="text/javascript"></script>
 <link href="/css/main.css" type="text/css" rel="stylesheet" />
-<script>
-	$(document).ready(function () {
-		var show_on_page=document.getElementById('acc_page').value;
-		if (show_on_page != "") {
-			$('#accont_information').load('/show-account-information');
-		}
-	});
-</script>
 <%= yield :html_head %>
 </head>
 
@@ -30,26 +22,18 @@
 	 
         <!-- Header -->
 		<!--if we are showing the information on page then render corresponding divs.-->
-        <%unless params[:show].blank?%>
-			<div class="page">
-			<%=render :partial=>'/layouts/templates/account_browse' %>
-			<div class="header">
-	            <div class="logo">
-	                <a href="#"><img src="/images/logo.gif" alt="CGES &#8211; Centre for Global Energy Studies" /></a>
-	            </div><%=render :partial=>'/layouts/templates/show_popup_link' %>
-	            <%=render :partial=>'/layouts/templates/menu' %>
-	            <div class="clear"></div>
-	        </div>
-		<%else%>
-			<div class="popup">
-		<%end%>	
+        <div class="popup">
 		 <!-- Content -->
 		<div class="content" >
 	    	<div class="popup-center">
 	    		<div id="main-content" class="custom-content">
 	    			<div id="accont_information">
-	    				Please wait...
-	    			</div>
+	    				<%if logged_in?%>
+							Please wait...
+	    				<%else%>
+							 To see this page, you should be log in.
+						<%end%>
+					</div>
 	    		</div><!-- end of main content -->
 				<%if params[:show].blank?%>
 					<div style="margin-left:500px;"><a href="/profile-information">Goto page</a></div>

@@ -24,6 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   map.show_account_information 'show-account-information' ,:controller => "custom", :action => 'show_account_information'
   map.save_account_information 'save-account-information' ,:controller => "custom", :action => 'save_account_information'
   map.show_state_list 'show-state-list' ,:controller => "custom", :action => 'show_state_list'
+  map.global_search 'global-search' ,:controller => "custom", :action => 'global_search'
  # map.routes_for_bcms_event 
  # map.routes_for_bcms_news 
   map.routes_for_browser_cms

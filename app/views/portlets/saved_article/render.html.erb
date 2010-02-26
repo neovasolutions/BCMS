@@ -1,3 +1,4 @@
+<%if logged_in?%>
 <%if params[:show].blank?%>
 	<a class="more-items" href="/all-saved-articles?show=all">More Saved Items</a>
 <%end%>
@@ -19,4 +20,7 @@
 	</ul>
 
 </div><div class="clear"></div>
+<%else%>
+	 To see this page, you should be log in.
+<%end%>
 </div>

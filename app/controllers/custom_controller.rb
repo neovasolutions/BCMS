@@ -18,7 +18,7 @@ class CustomController < ApplicationController
     end
     render :partial=>'/custom/search', :object=>@pages
   end
-  #This function to save the artcle.
+  #This function to save the artcle
   def save_article
     unless params[:article_name].blank?
       link_url=params[:link_url].delete('#')
@@ -26,10 +26,14 @@ class CustomController < ApplicationController
     end
     render :text=>"Article saved successfully."
   end
-  #This is for updating the account email alert setting.
+  #This is for updating the account email alert setting
   def account_email_alert
-    @contact=Contact.find_by_ship_address_id(current_user.ship_address_id)
-    render :partial=>'/custom/account_email_alert', :locals=>{:contact=>@contact}
+    if logged_in?
+      @contact=Contact.find_by_ship_address_id(current_user.ship_address_id)
+      render :partial=>'/custom/account_email_alert', :locals=>{:contact=>@contact}
+    else
+      render :text=> "To see this page, you should be log in."
+    end
   end
   #This function save the account email alerts
   def save_account_email_alert
@@ -45,22 +49,26 @@ class CustomController < ApplicationController
   end
   #This function for updating the account subscription
   def acc_subscription
-    @current_interest=[]
-    @user_functions=Function.find( :all, 
-                                  :joins  =>  " as f INNER JOIN contacts c ON c.id=f.contact_id and c.ship_address_id=#{current_user.ship_address_id}" ,
-    :select =>  "f.id as function_id, f.contact_id as contact_id, f.contact_function_id as contact_function_id"
-    )
-    @user_functions.collect{|user_functions| @current_interest << user_functions.contact_function_id} unless @user_functions.blank?
-    @contact_functions=ContactFunction.find(:all)
-    unless @contact_functions.blank?
-      if(@contact_functions.length%2==0)
+    if logged_in?
+      @current_interest=[]
+      @user_functions=Function.find( :all, 
+                                    :joins  =>  " as f INNER JOIN contacts c ON c.id=f.contact_id and c.ship_address_id=#{current_user.ship_address_id}" ,
+      :select =>  "f.id as function_id, f.contact_id as contact_id, f.contact_function_id as contact_function_id"
+      )
+      @user_functions.collect{|user_functions| @current_interest << user_functions.contact_function_id} unless @user_functions.blank?
+      @contact_functions=ContactFunction.find(:all)
+      unless @contact_functions.blank?
+        if(@contact_functions.length%2==0)
           @contact_functions_left=@contact_functions.first(@contact_functions.length/2)
-      else
+        else
           @contact_functions_left=@contact_functions.first(@contact_functions.length/2 +1)
+        end
+        @contact_functions_right=@contact_functions.last(@contact_functions.length/2)
       end
-      @contact_functions_right=@contact_functions.last(@contact_functions.length/2)
-    end
-    render :partial=>'/custom/account_subscription', :locals=>{:user_functions=>@user_functions, :contact_functions=>@contact_functions, :current_interest=>@current_interest}
+      render :partial=>'/custom/account_subscription', :locals=>{:user_functions=>@user_functions, :contact_functions=>@contact_functions, :current_interest=>@current_interest}
+    else
+      render :text=> "To see this page, you should be log in."
+    end 
   end
   #This function saves the new account subscription.
   def save_account_subscription
@@ -86,15 +94,19 @@ class CustomController < ApplicationController
   end
   #This function shows existing account information.
   def show_account_information
-    @contact=Contact.find_by_ship_address_id(current_user.ship_address_id)
-    @contact_email=ContactEmail.find(:first, :conditions=>"contact_id=#{@contact.id}")
-    @user=current_user
-    @billing_address=Address.find(current_user.bill_address_id)
-    @billing_address_state=State.find(:all, :conditions=>"country_id=#{@billing_address.country_id}") unless @billing_address.country_id.blank?
-    @ship_address=Address.find(current_user.ship_address_id)
-    @ship_address_state=State.find(:all, :conditions=>"country_id=#{@ship_address.country_id}")
-    @country=Country.find(:all)
-    render :partial=>'/custom/account_information', :locals=>{:contact=>@contact,:contact_email=>@contact_email, :billing_address=>@billing_address, :ship_address=>@ship_address, :country=>@country, :ship_address_state=>@ship_address_state, :billing_address_state=>@billing_address_state}
+    if logged_in?
+      @contact=Contact.find_by_ship_address_id(current_user.ship_address_id)
+      @contact_email=ContactEmail.find(:first, :conditions=>"contact_id=#{@contact.id}")
+      @user=current_user
+      @billing_address=Address.find(current_user.bill_address_id)
+      @billing_address_state=State.find(:all, :conditions=>"country_id=#{@billing_address.country_id}") unless @billing_address.country_id.blank?
+      @ship_address=Address.find(current_user.ship_address_id)
+      @ship_address_state=State.find(:all, :conditions=>"country_id=#{@ship_address.country_id}")
+      @country=Country.find(:all)
+      render :partial=>'/custom/account_information', :locals=>{:contact=>@contact,:contact_email=>@contact_email, :billing_address=>@billing_address, :ship_address=>@ship_address, :country=>@country, :ship_address_state=>@ship_address_state, :billing_address_state=>@billing_address_state}
+    else
+       render :text=> "To see this page, you should be log in."
+    end
   end
   #This function saves the updated account information.
   def save_account_information
@@ -128,14 +140,14 @@ class CustomController < ApplicationController
           bcountry_id=params[:bcountry]
         end
         if !params[:bstate].blank? and params[:bstate]!="0"
-            bstate_id=params[:bstate]
+          bstate_id=params[:bstate]
         end
         if !params[:bstate_name].blank?
           bstate_id=nil
           bstate_name=params[:bstate_name]
         end
         bill_address.update_attributes(:firstname=>params[:bfname], :lastname=>params[:blname], :address1=>params[:bad1], :address2=>params[:bad2], :city=>params[:bcity],
-        :phone=>params[:bphone], :zipcode=>params[:bzip], :country_id=>bcountry_id, :state_id=>bstate_id, :state_name=>bstate_name)
+                                       :phone=>params[:bphone], :zipcode=>params[:bzip], :country_id=>bcountry_id, :state_id=>bstate_id, :state_name=>bstate_name)
       end
       #Update shipping address information
       unless ship_address.blank?
@@ -167,5 +179,14 @@ class CustomController < ApplicationController
       end  
     end
     render :partial=>'/custom/state_list', :locals=>{:state=>@state}
+  end
+  
+  #This function is for global search. Do a query on pages table and return the matched results.
+  def global_search
+    unless params[:global_search_text].blank?
+      search_text="%" + params[:global_search_text] + "%"
+      @pages=Page.find(:all, :conditions=>"name like '#{search_text}'")
+    end
+    render :partial=>'/custom/global_search', :object=>@pages
   end
 end

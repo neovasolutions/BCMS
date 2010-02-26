@@ -249,7 +249,7 @@ text-align:right;
 /* Search Form */
 .header .main-nav .search-form {
 	float: right;
-	width: 252px;
+	width: 220px;
 }
 .header .main-nav .search-form FORM {
 	padding: 0;
@@ -2435,9 +2435,18 @@ position: absolute;
 	height: auto;
 	opacity: 100;
 }
-.saveartcile-button{
+.savearticle-button{
 float:right;
 top:4px;
 right:120px;
 position: absolute;
+
+}
+
+.globalseach_popup{
+	/*border: 1px solid;*/
+	position: absolute;	
+	background-color:#fff;
+	clear:both;
+	z-index: 10;
 }

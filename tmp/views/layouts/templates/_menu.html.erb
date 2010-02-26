@@ -1,3 +1,15 @@
+<script type="text/javascript">
+	//This function is for global search.
+function globalSearch(){
+		var global_search_string=document.getElementById('global_search').value;
+		$.ajax({
+				url: 'global-search?global_search_text='+global_search_string,
+				success: function(data, status, httpobj){
+					document.getElementById('global_search_result').innerHTML=data;
+				}
+			});
+}
+</script>
 <div class="main-nav home">
 
     			<div class="left"><div class="right">
@@ -10,14 +22,18 @@
 
     						<div>
 
-    							<input class="input-text" name="search" type="text" value="Search" title="Search" onblur="if(this.value==''){this.value=this.title;}" onfocus="if(this.value==this.title){this.value='';}" />
+    							<input class="input-text" name="global_search" id="global_search" type="text" value="Search" title="Search" onblur="if(this.value==''){this.value=this.title;}" onfocus="if(this.value==this.title){this.value='';}" 
+								onkeyup="globalSearch();" />
 
-    							<input class="input-button" value="submit" type="image" src="/images/buttons/go-button.jpg" alt="GO" />
+    						<!--	<input class="input-button" value="submit" type="image" src="/images/buttons/go-button.jpg" alt="GO" onclick="globalSearch();"/>-->
 
     						</div>
 
     					</form>
-
+						<div class="clear"></div>
+						<div id="global_search_result" class="globalseach_popup">
+							
+						</div>
     				</div>
 
     			</div></div>
